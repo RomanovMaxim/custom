@@ -52,6 +52,7 @@ public class SimpleArrayList<E> {
         System.arraycopy(bufData, 0, data, 0, size);
     }
 
+    @SuppressWarnings("unchecked")
     public E get(int index) {
         if (index < 0 || index >= size) {
             throw new ArrayIndexOutOfBoundsException("Index " + index + " out of range [0, " + (size-1) + "].");
@@ -60,20 +61,28 @@ public class SimpleArrayList<E> {
     }
 
     public E remove(int index) {
-        Object value = get(index);
+        E value = get(index);
         System.arraycopy(data, index+1, data, index, size - index - 1);
         data[size - 1] = null;
         size--;
-        return (E) value;
+        return value;
     }
 
+    @SuppressWarnings("unchecked")
+    public E[] toArray() {
+        return (E[]) Arrays.copyOf(data, size);
+    }
 
     @Override
     public String toString() {
-        return "SimpleArrayList{" +
-                "capacity=" + capacity +
-                ", size=" + size +
-                ", data=" + Arrays.toString(data) +
-                '}';
+        if (size == 0)
+            return "[]";
+
+        StringBuilder b = new StringBuilder();
+        b.append('[').append(data[0]);
+        for (int i = 1; i < size; i++) {
+            b.append(", ").append(data[i]);
+        }
+        return b.append(']').toString();
     }
 }
