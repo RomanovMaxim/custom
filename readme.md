@@ -1,17 +1,17 @@
-##Это учебный проект для изучения основных структур данных из библиотеки Collections.
+## Это учебный проект для изучения основных структур данных из библиотеки Collections.
 
-###*SimpleArrayList*
+### *SimpleArrayList*
 
 Класс SimpleArrayList --
 представляет собой урезанную версию ArrayList.
 
-####Конструкторы:
+#### Конструкторы:
 
 * `SimpleArrayList()` - создает массив с емкостью по умолчанию 3.
 * `SimpleArrayList(int initialCapacity)` - создает массив емкости initialCapacity.
 
 
-####Методы:
+#### Методы:
 
 * `int getSize()`
 * `void append(E element)`
