@@ -3,6 +3,9 @@ import java.util.Arrays;
 public class Main {
 
     public static void main(String[] args) {
+
+        // Simple ArrayList
+
         SimpleArrayList<Integer> nums = new SimpleArrayList<>();
         System.out.println(nums);
 
@@ -17,7 +20,6 @@ public class Main {
 
         nums.append(4);
         System.out.println(nums);
-
 
         nums.addAll(Arrays.asList(7, 8));
         System.out.println(nums);
